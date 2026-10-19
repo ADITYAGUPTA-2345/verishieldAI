@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VeriShield AI | Recruitment security</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header class="app-header"><div class="brand-icon" aria-hidden="true">V</div><div><h1>VeriShield <span>AI</span></h1><p>Recruitment security review</p></div><span class="local">LOCAL + WEB</span></header>
+  <div class="scan-bar"><button id="scan" type="button">Scan This Page <span aria-hidden="true">&#8594;</span></button><p id="status" role="status" aria-live="polite">Ready to inspect a public job or internship posting.</p></div>
+  <main aria-label="Recruitment risk dashboard" tabindex="0">
+    <section class="intro" id="start-intro"><span class="eyebrow">EVIDENCE BEFORE TRUST</span><h2>A clearer view of the offer.</h2><p>Review local warning patterns, model output, employer evidence, and recruitment domain/email indicators.</p><p class="privacy">Scanning sends visible page text to your local backend. Employer web research is a separate action. Recognized private mail/account pages are excluded.</p></section>
+    <div id="result" hidden>
+      <section class="panel"><h2><span class="section-number">01</span> Job information</h2><div id="job-details"></div><p id="coverage" class="muted"></p></section>
+      <section class="panel advisory-panel"><h2><span class="section-number">02</span> Overall advisory</h2><p id="risk" class="risk insufficient">Insufficient information</p><ul id="advisory-reasons" class="compact-list"></ul><p class="note">An advisory, not a fraud verdict or a combined probability.</p></section>
+      <section class="panel"><h2><span class="section-number">03</span> Machine learning</h2><p id="ml-prediction" class="metric"></p><p id="ml-note" class="muted"></p><p class="note">The fraud-class output is not necessarily a calibrated fraud probability. A predicted legitimate class does not establish authenticity.</p></section>
+      <section class="panel"><h2><span class="section-number">04</span> Suspicious patterns</h2><span id="score" class="small-badge"></span><p id="summary"></p><div id="findings"></div><p id="disclaimer" class="note"></p></section>
+      <section class="panel investigation-controls"><h2><span class="section-number">05</span> Employer investigation</h2><p id="employer-preview" role="status"></p>
+        <label for="employer-name">Employer name <span class="muted">(optional correction)</span></label><input id="employer-name" maxlength="100" placeholder="Auto-detect from posting" autocomplete="off">
+        <label for="company-website">Company website <span class="muted">(optional, unverified hint)</span></label><input id="company-website" type="url" maxlength="2048" placeholder="https://company.com/" autocomplete="off">
+        <p class="privacy">Only the employer query and public source URLs go to TinyFish. Email checks remain local. Related passages do not verify an offer.</p>
+        <button id="investigate" type="button">Investigate Employer <span aria-hidden="true">&#8599;</span></button><p id="investigation-status" role="status" aria-live="polite">No web investigation has run for this scan.</p><div id="investigation-report" hidden></div>
+      </section>
+      <section class="panel"><h2><span class="section-number">06</span> Domain impersonation analysis</h2><div id="domain-analysis"></div></section>
+      <section class="panel"><h2><span class="section-number">07</span> Recruitment email analysis</h2><div id="email-analysis"></div></section>
+      <section class="panel recommendation"><h2><span class="section-number">08</span> Final recommendation</h2><p id="recommendation">Complete a scan to review the available evidence.</p></section>
+    </div>
+  </main>
+  <footer>Local rules &amp; ML &middot; Optional TinyFish evidence &middot; No external LLM</footer>
+</body>
+</html>

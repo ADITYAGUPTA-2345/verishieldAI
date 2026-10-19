@@ -1,0 +1,56 @@
+:root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #1c3044; background: #edf2f6; font-size: 13px; line-height: 1.55; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+/* Explicit root dimensions avoid Chrome sizing the popup from a narrow viewport. */
+html, body { width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; height: 600px; max-height: 600px; overflow: hidden; }
+body { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr) auto; }
+body > *, .app-header > *, #result > *, .panel > *, .details-grid > * { min-width: 0; }
+.app-header { display: flex; align-items: center; gap: 10px; background: #0c172b; color: #f1f8fc; padding: 14px 16px; border-bottom: 2px solid #1b9c9a; }
+.brand-icon { flex: 0 0 36px; background: #146e76; border: 1px solid #2fb1ad; border-radius: 9px 9px 16px 16px; width: 36px; height: 40px; display: grid; place-items: center; font-size: 23px; font-weight: 800; }
+h1 { margin: 0; font-size: 21px; letter-spacing: -.4px; } h1 span { color: #6be2d3; }
+.app-header p { margin: 4px 0 0; font-size: 11px; color: #b4c8d9; }
+.local { flex-shrink: 0; margin-left: auto; border: 1px solid #365366; border-radius: 5px; padding: 5px 6px; font-size: 9px; letter-spacing: .5px; color: #83e3d6; white-space: nowrap; }
+.scan-bar { padding: 12px 16px 0; background: #f7fafc; border-bottom: 1px solid #d5e0e9; }
+button { width: 100%; display: flex; align-items: center; justify-content: space-between; border: 0; border-radius: 7px; background: #106c73; color: white; padding: 11px 14px; cursor: pointer; font: 600 13px "Segoe UI", sans-serif; }
+button:hover { background: #09545e; } button:disabled { opacity: .6; cursor: wait; }
+button:focus-visible, input:focus-visible, main:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid #3cb9ba; outline-offset: 2px; }
+#status { font-size: 12px; color: #486173; margin: 8px 0 10px; } #status.error { color: #a22b35; }
+/* The only scrolling container. Cards and expanded details grow naturally. */
+main { padding: 14px 12px; overflow-y: auto; min-height: 0; min-width: 0; scrollbar-gutter: stable; }
+.intro { background: #fff; padding: 23px; border: 1px solid #d6e1e9; border-radius: 11px; }
+.eyebrow { color: #137780; font-size: 10px; letter-spacing: 1.3px; font-weight: 700; }
+.intro h2 { display: block; font-size: 22px; line-height: 1.3; margin-top: 12px; }
+#result { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+.panel { background: #fff; border: 1px solid #d6e1e9; border-radius: 9px; padding: 14px; min-width: 0; }
+h2 { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 13px; font-size: 16px; line-height: 1.4; color: #163348; overflow-wrap: normal; word-break: normal; }
+.section-number { flex-shrink: 0; font-size: 10px; color: #177b80; background: #e9f5f4; border-radius: 4px; padding: 4px 5px; letter-spacing: .5px; }
+p { line-height: 1.6; margin: 8px 0; } .muted, .note, .privacy { color: #486173; font-size: 12px; } .note { border-top: 1px solid #e1e9ef; padding-top: 9px; }
+/* Stacked labels leave full width for explanations and long evidence domains. */
+.details-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3px; font-size: 13px; margin: 0; }
+dt { color: #536b7d; font-size: 12px; font-weight: 600; } dd { margin: 0 0 9px; overflow-wrap: break-word; }
+.risk { display: inline-block; margin: 0 0 7px; padding: 9px 11px; font-size: 13px; font-weight: 700; border-radius: 6px; border: 1px solid transparent; }
+.risk.no-major { color: #175b51; background: #e7f4f0; border-color: #b5d9cf; }
+.risk.review { color: #805000; background: #fff3d7; border-color: #e9cf99; }
+.risk.elevated { color: #a1273d; background: #ffedf0; border-color: #e6b7c0; }
+.risk.insufficient { color: #425c76; background: #eef2f7; border-color: #cbd7e3; }
+.advisory-panel { border-left: 4px solid #2d8f99; } .recommendation { border-left: 4px solid #0f7382; background: #f8fcfc; }
+.compact-list { margin: 5px 0 0; padding-left: 18px; color: #415e72; font-size: 13px; line-height: 1.65; }
+.metric { font-size: 14px; font-weight: 600; color: #174d66; }
+.small-badge, .severity { display: inline-block; background: #eef4f8; color: #486579; font-size: 10px; padding: 4px 7px; border-radius: 4px; }
+.finding { border-top: 1px solid #e2eaf0; padding: 11px 0; } .finding:first-child { margin-top: 8px; }
+.finding h3 { font-size: 14px; margin: 0 0 6px; } .finding p { font-size: 13px; color: #39576d; }
+.severity.high { color: #a1273d; background: #ffedf0; } .severity.medium { color: #805000; background: #fff3d7; } .severity.low { color: #775b19; background: #faf5e4; } .severity.info { color: #245878; background: #eaf3fa; }
+blockquote { margin: 8px 0; padding: 8px 10px; background: #f3f7f9; border-left: 3px solid #75aeb3; color: #335469; font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: break-word; }
+label { display: block; font-size: 13px; margin: 12px 0 5px; }
+input { width: 100%; border: 1px solid #b6cad5; border-radius: 6px; padding: 9px; font: inherit; font-size: 12px; background: #fcfefe; }
+#investigation-status, #employer-preview { font-size: 12px; color: #39576d; }
+#investigation-report h4 { margin: 14px 0 6px; font-size: 14px; } #investigation-report p, #investigation-report li { font-size: 13px; }
+#investigation-report ul { padding-left: 18px; line-height: 1.65; } a { color: #086a80; text-decoration-thickness: 1px; text-underline-offset: 2px; overflow-wrap: anywhere; }
+details { margin-top: 12px; border: 1px solid #dbe6ed; background: #f8fafc; border-radius: 5px; padding: 10px; } summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #3c6078; }
+.email-card { margin-top: 10px; padding-top: 10px; border-top: 1px solid #e2eaf0; } .email-address { font-family: Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; }
+footer { padding: 8px 12px; text-align: center; font-size: 10px; line-height: 1.4; background: #0c172b; color: #b5cdd9; }
+/* Break only overlong tokens; ordinary text keeps natural word boundaries. */
+.panel p, .panel li, .finding h3, summary { overflow-wrap: break-word; }
+button { min-height: 42px; gap: 8px; }
+input { min-width: 0; font-size: 13px; }
+button:disabled { background: #536b7d; opacity: 1; }

@@ -1,0 +1,59 @@
+{
+  "dataset_sha256": "59253295129d8b6a27607f9904f7d4ddf4dbb0ee35e079c7eb51b58b5e62bf60",
+  "rows": 17880,
+  "columns": [
+    "job_id",
+    "title",
+    "location",
+    "department",
+    "salary_range",
+    "company_profile",
+    "description",
+    "requirements",
+    "benefits",
+    "telecommuting",
+    "has_company_logo",
+    "has_questions",
+    "employment_type",
+    "required_experience",
+    "required_education",
+    "industry",
+    "function",
+    "fraudulent"
+  ],
+  "class_distribution": {
+    "0": 17014,
+    "1": 866
+  },
+  "missing_values": {
+    "job_id": 0,
+    "title": 0,
+    "location": 346,
+    "department": 11553,
+    "salary_range": 15012,
+    "company_profile": 3308,
+    "description": 1,
+    "requirements": 2696,
+    "benefits": 7214,
+    "telecommuting": 0,
+    "has_company_logo": 0,
+    "has_questions": 0,
+    "employment_type": 3471,
+    "required_experience": 7050,
+    "required_education": 8105,
+    "industry": 4903,
+    "function": 6455,
+    "fraudulent": 0
+  },
+  "full_row_duplicate_excess": 0,
+  "duplicates_excluding_job_id_excess": 281,
+  "normalized_model_text_duplicate_excess": 2008,
+  "conflicting_text_groups": 0,
+  "empty_text_rows": 0,
+  "cleaned_rows": 15872,
+  "cleaned_class_distribution": {
+    "0": 15159,
+    "1": 713
+  },
+  "description_groups": 14592
+}

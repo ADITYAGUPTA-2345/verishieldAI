@@ -1,0 +1,98 @@
+{
+  "dataset_sha256": "59253295129d8b6a27607f9904f7d4ddf4dbb0ee35e079c7eb51b58b5e62bf60",
+  "versions": {
+    "python": "3.12.3",
+    "scikit_learn": "1.7.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "joblib": "1.5.2"
+  },
+  "trained_at_utc": "2026-10-19T16:16:11.814309+00:00",
+  "split": {
+    "method": "first fold of StratifiedGroupKFold(n_splits=5, shuffle=True)",
+    "seed": 42,
+    "train_rows": 12741,
+    "test_rows": 3131,
+    "train_class_distribution": {
+      "0": 12181,
+      "1": 560
+    },
+    "test_class_distribution": {
+      "0": 2978,
+      "1": 153
+    },
+    "description_group_overlap": 0,
+    "combined_text_overlap": 0
+  },
+  "text_fields": [
+    "title",
+    "company_profile",
+    "description",
+    "requirements",
+    "benefits"
+  ],
+  "threshold": 0.5,
+  "parameters": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 60000,
+    "sublinear_tf": true,
+    "C": 1.0,
+    "class_weight": "balanced",
+    "solver": "liblinear",
+    "max_iter": 1000
+  },
+  "accuracy": 0.9750878313637815,
+  "precision": 0.7450980392156863,
+  "recall": 0.7450980392156863,
+  "f1": 0.7450980392156863,
+  "positive_label": "fraudulent (1)",
+  "confusion_matrix_order": [
+    "legitimate (0)",
+    "fraudulent (1)"
+  ],
+  "confusion_matrix": [
+    [
+      2939,
+      39
+    ],
+    [
+      39,
+      114
+    ]
+  ],
+  "classification_report": {
+    "legitimate": {
+      "precision": 0.9869039623908663,
+      "recall": 0.9869039623908663,
+      "f1-score": 0.9869039623908663,
+      "support": 2978.0
+    },
+    "fraudulent": {
+      "precision": 0.7450980392156863,
+      "recall": 0.7450980392156863,
+      "f1-score": 0.7450980392156863,
+      "support": 153.0
+    },
+    "accuracy": 0.9750878313637815,
+    "macro avg": {
+      "precision": 0.8660010008032764,
+      "recall": 0.8660010008032764,
+      "f1-score": 0.8660010008032764,
+      "support": 3131.0
+    },
+    "weighted avg": {
+      "precision": 0.9750878313637815,
+      "recall": 0.9750878313637815,
+      "f1-score": 0.9750878313637815,
+      "support": 3131.0
+    }
+  },
+  "majority_baseline_accuracy": 0.9511338230597254,
+  "vocabulary_size": 60000,
+  "limitations": "Single historical holdout; not company-disjoint or temporal. Near-duplicates and shared templates may remain. Browser page text differs from curated dataset text. Balanced model probabilities are not calibrated fraud likelihoods.",
+  "artifact_sha256": "dad0985f83f5526a201bbed7c21958e84acf56e68f0577e78295067fd3c6d5e8"
+}
